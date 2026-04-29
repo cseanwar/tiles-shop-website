@@ -35,7 +35,7 @@ const Navbar = () => {
           Login
         </Button>
 
-        {/* <div className="flex gap-4">
+        <div className="flex gap-4">
           {!user && (
             <ul className="flex items-center  text-sm gap-5">
               <li>
@@ -61,7 +61,7 @@ const Navbar = () => {
               <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
             </div>
           )}
-        </div> */}
+        </div>
       </nav>
     </div>
   );
