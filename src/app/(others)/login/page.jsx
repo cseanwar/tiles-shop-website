@@ -42,7 +42,7 @@ const LoginPage = () => {
     <Card className="border mx-auto w-125 py-10 mt-12">
       <h1 className="text-center text-3xl font-bold">Login</h1>
 
-      <Separator className="mb-5" />
+      <Separator className="mb-5 h-0.5 bg-olive-500 w-96 ml-10" />
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField
@@ -100,9 +100,9 @@ const LoginPage = () => {
         </div>
 
         <div className="flex items-center gap-3 w-42 mt-5">
-          <Separator />
+          <Separator className="bg-olive-500 h-0.5" />
           <span className="whitespace-nowrap text-lg text-olive-500 font-bold">OR</span>
-          <Separator />
+          <Separator className="bg-olive-500 h-0.5" />
         </div>
 
         <Button
@@ -114,9 +114,9 @@ const LoginPage = () => {
         </Button>
       </Form>
 
-      <p className="text-center font-semibold text-base mt-10">
+      <p className="text-center mt-10">
           Don't Have An Account?{" "}
-          <Link href={"/register"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent">
+          <Link href={"/register"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl">
             Register
           </Link>
         </p>

@@ -47,8 +47,8 @@ const Navbar = () => {
           </Link>
         )}
         {user && (
-          <div className="flex gap-3">
-            <Avatar size="sm">
+          <div className="flex justify-center items-center gap-3">
+            <Avatar size="lg">
               <Avatar.Image
                 alt="John Doe"
                 src={user?.image}
@@ -57,7 +57,7 @@ const Navbar = () => {
               <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
             </Avatar>
 
-            <Button onClick={handleSignOut} size="sm" variant="danger">
+            <Button onClick={handleSignOut} size="md" variant="danger">
               SignOut
             </Button>
           </div>

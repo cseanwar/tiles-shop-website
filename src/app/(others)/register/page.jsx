@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
@@ -12,6 +13,7 @@ import {
   Separator,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
@@ -49,7 +51,7 @@ const RegisterPage = () => {
     <Card className="border mx-auto w-125 py-10 mt-10">
       <h1 className="text-center text-2xl font-bold">Register An Account</h1>
 
-        <Separator className="mb-5" />
+        <Separator className="mb-5 h-0.5 bg-olive-500" />
 
       <Form className="flex w-96 mx-auto flex-col gap-6" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -118,6 +120,13 @@ const RegisterPage = () => {
           </Button>
         </div>
       </Form>
+
+      <p className="text-center mt-10">
+                Already Have An Account?{" "}
+                <Link href={"/login"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl">
+                  Login
+                </Link>
+              </p>
     </Card>
   );
 };
