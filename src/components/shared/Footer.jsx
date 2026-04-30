@@ -21,9 +21,9 @@ const Footer = () => {
       />
 
       {/* Content */}
-      <div className="container mx-auto px-10 py-16">
+      <div className="container mx-auto px-10 py-5">
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-50 justify-center items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-50 justify-center items-start pt-12">
           {/* Brand */}
           <div className="space-y-4">
             <div>
@@ -93,10 +93,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-12 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
+        <div className="mt-15 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-white/10" />
 
         {/* Bottom */}
-        <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
           <p>© {new Date().getFullYear()} TILE.MAX All rights reserved.</p>
 
           <div className="flex items-center gap-6">
