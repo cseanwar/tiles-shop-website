@@ -31,9 +31,11 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <Button href="/login" type="login" size="md" variant="primary">
-          Login
-        </Button>
+        <Link href={"/login"}>
+          <Button type="login" size="md" variant="primary">
+            Login
+          </Button>
+        </Link>
 
         {/* <div className="flex gap-4">
           {!user && (

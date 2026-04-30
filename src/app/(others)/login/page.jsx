@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
@@ -8,8 +10,10 @@ import {
   Form,
   Input,
   Label,
+  Separator,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { GrGoogle } from "react-icons/gr";
 
 const LoginPage = () => {
@@ -28,9 +32,17 @@ const LoginPage = () => {
     console.log({ data, error });
   };
 
+  const handlGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
-      <h1 className="text-center text-2xl font-bold">Login</h1>
+    <Card className="border mx-auto w-125 py-10 mt-12">
+      <h1 className="text-center text-3xl font-bold">Login</h1>
+
+      <Separator className="mb-5" />
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField
@@ -45,7 +57,7 @@ const LoginPage = () => {
             return null;
           }}
         >
-          <Label>Email</Label>
+          <Label className="text-lg font-semibold">Email</Label>
           <Input placeholder="john@example.com" />
           <FieldError />
         </TextField>
@@ -69,7 +81,7 @@ const LoginPage = () => {
             return null;
           }}
         >
-          <Label>Password</Label>
+          <Label className="text-lg font-semibold">Password</Label>
           <Input placeholder="Enter your password" />
           <Description className="text-red-500">
             Must be at least 8 characters with 1 uppercase and 1 number
@@ -77,7 +89,7 @@ const LoginPage = () => {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center justify-center mt-5">
           <Button type="submit">
             <Check />
             Submit
@@ -86,17 +98,31 @@ const LoginPage = () => {
             Reset
           </Button>
         </div>
+
+        <div className="flex items-center gap-3 w-42 mt-5">
+          <Separator />
+          <span className="whitespace-nowrap text-lg text-olive-500 font-bold">OR</span>
+          <Separator />
+        </div>
+
+        <Button
+          onClick={handlGoogleSignIn}
+          variant="outline"
+          className="w-full"
+        >
+          <GrGoogle /> Sign In With Google
+        </Button>
       </Form>
 
-      <p className="text-center">Or</p>
+      <p className="text-center font-semibold text-base mt-10">
+          Don't Have An Account?{" "}
+          <Link href={"/register"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent">
+            Register
+          </Link>
+        </p>
 
-      <Button
-        onClick={handlGoogleSignIn}
-        variant="outline"
-        className={"w-full"}
-      >
-        <GrGoogle /> Sign In With Google
-      </Button>
+      {/* <span>OR<Separator /></span>   */}
+      {/* <p className="text-center"> Or</p> */}
     </Card>
   );
 };

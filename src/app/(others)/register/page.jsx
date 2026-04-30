@@ -46,7 +46,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-20">
+    <Card className="border mx-auto w-125 py-10 mt-10">
       <h1 className="text-center text-2xl font-bold">Register An Account</h1>
 
         <Separator className="mb-5" />
