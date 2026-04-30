@@ -8,7 +8,7 @@ const NotFound = () => {
     <div className="h-[80vh] flex justify-center items-center flex-col gap-4">
       <Image src={errorImage} alt="Error 404" width={300} height={200} />
       <Link href={"/"}>
-        <button className="btn bg-green-500 text-white">
+        <button className="bg-green-500 text-white flex items-center gap-2 py-3 px-5 rounded-sm hover:bg-green-600 transition-colors cursor-pointer">
           <FaArrowLeftLong className="text-xl" /> Back to Home
         </button>
       </Link>
