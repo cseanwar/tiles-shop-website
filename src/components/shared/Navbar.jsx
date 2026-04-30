@@ -6,7 +6,7 @@ import NavLink from "./NavLink";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="bg-[#F9F6F2]">
       <nav className=" flex justify-between items-center  py-3 container mx-auto w-full">
         <div className="flex items-center">
           <Image

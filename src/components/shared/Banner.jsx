@@ -1,21 +1,32 @@
-"use client";
+// "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from 'swiper/modules';
-import banner1 from "@/assets/banner-1.webp";
-import banner2 from "@/assets/banner-2.webp";
-import banner3 from "@/assets/banner-3.webp";
-import banner4 from "@/assets/banner-4.webp";
-import Image from "next/image";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination } from 'swiper/modules';
+// import banner1 from "@/assets/banner-1.webp";
+// import banner2 from "@/assets/banner-2.webp";
+// import banner3 from "@/assets/banner-3.webp";
+// import banner4 from "@/assets/banner-4.webp";
+// import Image from "next/image";
 
-import "swiper/swiper-bundle.css";
+// import "swiper/swiper-bundle.css";
 import Link from "next/link";
-
 
 const Banner = () => {
   return (
-    <div className="mb-10">
-      <Swiper
+    <div className="h-150 w-full bg-[url('/bg.jpg')] bg-cover bg-center">
+      <div className="flex flex-col gap-5 justify-center items-center text-center text-[#FFFFFF] py-10">
+        <h1 className="text-7xl text-left leading-20">Discover <br /> Your <br /> Perfect <br /> Aesthetic</h1>
+        <p>
+          Curated material selections for the modern architect. <br /> Explore our
+          gallery of artisanal ceramics, <br /> natural stones, and
+          precision-engineered tiles.
+        </p>
+        <Link href="/all-tiles">
+          <button className="bg-[#333736] hover:bg-[#555555] py-3 px-7 cursor-pointer">Browse Now</button>
+        </Link>
+      </div>
+
+      {/* <Swiper
         spaceBetween={50}
         slidesPerView={1}
         navigation={true}
@@ -122,7 +133,7 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
     </div>
   );
 };
