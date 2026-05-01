@@ -17,7 +17,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
-
   const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -27,14 +26,14 @@ const RegisterPage = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const {data: res, error} = await authClient.signUp.email({
-        name,
-        email,
-        password,
-        image,
-    })
+    const { data: res, error } = await authClient.signUp.email({
+      name,
+      email,
+      password,
+      image,
+    });
 
-    console.log({data: res, error})
+    console.log({ data: res, error });
 
     if (error) {
       alert(error.message);
@@ -44,14 +43,13 @@ const RegisterPage = () => {
       alert("Signup successful");
       router.push("/");
     }
-
   };
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-10">
       <h1 className="text-center text-2xl font-bold">Register An Account</h1>
 
-        <Separator className="mb-5 h-0.5 bg-olive-500" />
+      <Separator className="mb-5 h-0.5 w-96 ml-10 bg-olive-500" />
 
       <Form className="flex w-96 mx-auto flex-col gap-6" onSubmit={onSubmit}>
         <TextField isRequired name="name" type="text">
@@ -110,7 +108,15 @@ const RegisterPage = () => {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2 mt-5">
+        <Button
+          type="submit"
+          className="w-full bg-success font-semibold text-lg py-5 mt-3"
+        >
+          {/* <Check /> */}
+          Register
+        </Button>
+
+        {/* <div className="flex gap-2 mt-5">
           <Button type="submit">
             <Check />
             Submit
@@ -118,15 +124,18 @@ const RegisterPage = () => {
           <Button type="reset" variant="danger">
             Reset
           </Button>
-        </div>
+        </div> */}
       </Form>
 
       <p className="text-center mt-10">
-                Already Have An Account?{" "}
-                <Link href={"/login"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl">
-                  Login
-                </Link>
-              </p>
+        Already Have An Account?{" "}
+        <Link
+          href={"/login"}
+          className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl"
+        >
+          Login
+        </Link>
+      </p>
     </Card>
   );
 };

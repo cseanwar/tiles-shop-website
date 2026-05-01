@@ -1,6 +1,6 @@
-import Banner from "@/components/shared/Banner";
+import Banner from "@/components/Banner";
 import Footer from "@/components/shared/Footer";
-import LatestTiles from "@/components/shared/LatestTiles";
+import LatestTiles from "@/components/LatestTiles";
 import Navbar from "@/components/shared/Navbar";
 import React from "react";
 
@@ -10,6 +10,7 @@ const MainLayout = ({ children }) => {
       <Navbar />
       <Banner />
       <LatestTiles />
+      {/* <FeaturedTiles /> */}
       {children}
       <Footer />
     </>

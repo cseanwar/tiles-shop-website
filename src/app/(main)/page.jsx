@@ -1,5 +1,11 @@
+import FeaturedTiles from "@/components/FeaturedTiles";
+
 export default function Home() {
   return (
-    <h2 className="text-red-500">Homepage</h2>
+    <div className="bg-[#E7E5E4]">
+      <div className="container mx-auto">
+        <FeaturedTiles />
+      </div>
+    </div>
   );
 }

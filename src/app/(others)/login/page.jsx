@@ -14,7 +14,7 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
-import { GrGoogle } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -89,15 +89,15 @@ const LoginPage = () => {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2 items-center justify-center mt-5">
-          <Button type="submit">
-            <Check />
-            Submit
+        <Button type="submit" className="w-full bg-success font-semibold text-lg py-5 mt-3">
+            {/* <Check /> */}
+            Login
           </Button>
-          <Button type="reset" variant="danger">
-            Reset
-          </Button>
-        </div>
+
+        {/* <div className="flex gap-2 items-center justify-center mt-5">
+          
+          
+        </div> */}
 
         <div className="flex items-center gap-3 w-42 mt-5">
           <Separator className="bg-olive-500 h-0.5" />
@@ -107,10 +107,11 @@ const LoginPage = () => {
 
         <Button
           onClick={handlGoogleSignIn}
-          variant="outline"
-          className="w-full"
+          variant="tertiary"
+          className="w-full text-base font-semibold py-5 border-blue-500 flex items-center justify-center gap-2"
         >
-          <GrGoogle /> Sign In With Google
+          <FcGoogle /> 
+          Sign In With Google
         </Button>
       </Form>
 
