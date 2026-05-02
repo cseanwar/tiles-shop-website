@@ -2,7 +2,7 @@ import FeaturedTilesCard from "./FeaturedTilesCard";
 
 
 const FeaturedTiles = async () => {
-  const res = await fetch("https://tiles-shop-website.vercel.app/data.json");
+  const res = await fetch("https://json-server-noux.onrender.com/tiles");
   const tiles = await res.json();
   const featuredTiles = tiles.slice(0, 4);
 

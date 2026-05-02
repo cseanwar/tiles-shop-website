@@ -9,7 +9,7 @@ const AllTiles = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("https://tiles-shop-website.vercel.app/data.json")
+    fetch("https://json-server-noux.onrender.com/tiles")
       .then((res) => res.json())
       .then((data) => setTiles(data));
   }, []);
@@ -25,10 +25,10 @@ const AllTiles = () => {
           <h1 className="text-2xl font-bold mb-4">All Photos</h1>
 
           <div className="w-[500px]">
-            <SearchField 
-            className="gap-2"
-            value={searchQuery}
-            onChange={(value) => setSearchQuery(value)}
+            <SearchField
+              className="gap-2"
+              value={searchQuery}
+              onChange={(value) => setSearchQuery(value)}
             >
               <SearchField.Group className="rounded-md py-5 border-2">
                 <SearchField.SearchIcon className="text-blue-500" />
