@@ -20,18 +20,18 @@ const AllTiles = () => {
   );
 
   return (
-    <div className="bg-[#C3C7C630]">
-      <div className="container mx-auto my-10">
-        <div className="flex justify-between items-center mb-5">
-          <h1 className="text-2xl font-bold mb-4">All Photos</h1>
+    <div className="bg-[#C3C7C630] min-h-screen px-2">
+      <div className="container mx-auto sm:px-6 my-8 sm:my-10">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+          <h1 className="text-xl sm:text-2xl font-bold">All Photos</h1>
 
-          <div className="w-[500px] animate__animated animate__zoomInDown">
+          <div className="w-full sm:w-[350px] md:w-[450px] lg:w-[500px] animate__animated animate__zoomInDown">
             <SearchField
               className="gap-2"
               value={searchQuery}
               onChange={(value) => setSearchQuery(value)}
             >
-              <SearchField.Group className="rounded-md py-5 border-2">
+              <SearchField.Group className="rounded-md py-3 sm:py-5 border-2">
                 <SearchField.SearchIcon className="text-blue-500" />
                 <SearchField.Input
                   className="font-semibold"
@@ -44,13 +44,13 @@ const AllTiles = () => {
           <div></div>
         </div>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {filteredTiles.length > 0 ? (
             filteredTiles.map((tile) => (
               <FeaturedTilesCard key={tile.id} tile={tile} />
             ))
           ) : (
-            <p className="col-span-4 text-center text-gray-500 text-lg py-20">
+            <p className="col-span-full text-center text-gray-500 text-lg py-20">
               No tiles found for &quot;{searchQuery}&quot;
             </p>
           )}

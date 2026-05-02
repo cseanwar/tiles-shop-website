@@ -27,8 +27,6 @@ const LoginPage = () => {
       password,
       callbackURL: "/",
     });
-
-    console.log({ data, error });
   };
 
   const handlGoogleSignIn = async () => {
@@ -38,16 +36,18 @@ const LoginPage = () => {
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-12">
-      <h1 className="text-center text-3xl font-bold">Login</h1>
+    <div className="bg-[#C3C7C630] flex items-center justify-center px-4 py-10">
+      <Card className="border w-full max-w-sm sm:max-w-md py-8 sm:py-10 px-4 sm:px-6">
+      <h1 className="text-center text-2xl sm:text-3xl font-bold">Login</h1>
 
-      <Separator className="mb-5 h-0.5 bg-olive-500 w-96 ml-10" />
+      <Separator className="my-4 h-0.5 bg-olive-500 w-full" />
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+      <Form className="flex flex-col gap-4 w-full" onSubmit={onSubmit}>
         <TextField
           isRequired
           name="email"
           type="email"
+          className="w-full"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
@@ -56,8 +56,8 @@ const LoginPage = () => {
             return null;
           }}
         >
-          <Label className="text-lg font-semibold">Email</Label>
-          <Input placeholder="john@example.com" />
+          <Label className="text-base sm:text-lg font-semibold">Email</Label>
+          <Input placeholder="john@example.com" className="w-full" />
           <FieldError />
         </TextField>
 
@@ -66,6 +66,7 @@ const LoginPage = () => {
           minLength={8}
           name="password"
           type="password"
+          className="w-full"
           validate={(value) => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
@@ -80,9 +81,9 @@ const LoginPage = () => {
             return null;
           }}
         >
-          <Label className="text-lg font-semibold">Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description className="text-red-500">
+          <Label className="text-base sm:text-lg font-semibold">Password</Label>
+          <Input placeholder="Enter your password" className="w-full"/>
+          <Description className="text-red-500 text-xs sm:text-sm">
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
           <FieldError />
@@ -90,53 +91,38 @@ const LoginPage = () => {
 
         <Button
           type="submit"
-          className="w-full bg-success font-semibold text-lg py-5 mt-3"
+          className="w-full bg-success font-semibold text-base sm:text-lg py-4 sm:py-5 mt-3"
         >
-          {/* <Check /> */}
           Login
         </Button>
 
-        {/* <div className="flex gap-2 items-center justify-center mt-5">
-          
-          
-        </div> */}
-
-        <div className="flex items-center gap-3 w-42 mt-5">
-          <Separator className="bg-olive-500 h-0.5" />
-          <span className="whitespace-nowrap text-lg text-olive-500 font-bold">
+        <div className="flex items-center gap-3 w-full mt-2">
+          <Separator className="bg-olive-500 h-0.5 flex-1" />
+          <span className="whitespace-nowrap text-base sm:text-lg text-olive-500 font-bold">
             OR
           </span>
-          <Separator className="bg-olive-500 h-0.5" />
+          <Separator className="bg-olive-500 h-0.5 flex-1" />
         </div>
 
-        <Button onClick={handlGoogleSignIn} className="w-full text-base font-semibold py-5 flex items-center justify-center gap-3" variant="tertiary">
-          <Icon icon="devicon:google" />
+        <Button onClick={handlGoogleSignIn} 
+          className="w-full text-sm sm:text-base font-semibold py-4 sm:py-5 flex items-center justify-center gap-3" 
+          variant="tertiary">
+          <Icon icon="devicon:google" width={20} />
           Sign in with Google
         </Button>
-
-        {/* <Button
-          onClick={handlGoogleSignIn}
-          variant="tertiary"
-          className="w-full text-base font-semibold py-5 border-blue-500 flex items-center justify-center gap-2"
-        >
-          <FcGoogle /> 
-          Sign In With Google
-        </Button> */}
       </Form>
 
-      <p className="text-center mt-10">
+      <p className="text-center mt-6 text-sm sm:text-base">
         Don't Have An Account?{" "}
         <Link
           href={"/register"}
-          className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl"
+          className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-lg sm:text-xl"
         >
           Register
         </Link>
       </p>
-
-      {/* <span>OR<Separator /></span>   */}
-      {/* <p className="text-center"> Or</p> */}
     </Card>
+    </div>
   );
 };
 
