@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏺 TileMax — Tiles Shop Website
 
-## Getting Started
+## Purpose
 
-First, run the development server:
+TileMax is a modern, full-stack tile shop web application built with Next.js. It allows users to browse a curated collection of artisanal ceramics, natural stones, and precision-engineered tiles. Users can search for tiles, view detailed information, and manage their accounts with secure authentication including Google Sign-In.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🌐 Live URL
+
+🔗 [https://tiles-shop-website.vercel.app](https://tiles-shop-website.vercel.app)
+
+---
+
+## ✨ Key Features
+
+- 🔍 **Search Tiles** — Real-time search by tile title on the All Tiles page
+- 🧱 **Tile Listings** — Browse all tiles in a responsive grid layout
+- 📄 **Tile Details** — View detailed info (description, material, price, stock status) for each tile
+- 🔐 **Authentication** — Email/password sign up & login with form validation
+- 🔑 **Google Sign-In** — One-click authentication via Google OAuth
+- 👤 **User Profile** — View and update your profile information
+- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop
+- 🎨 **Polished UI** — Golden hover effects, animated banner, category chips, and stock badges
+
+---
+
+## 🛠️ NPM Packages Used
+
+### Core
+| Package | Purpose |
+|---|---|
+| `next` | React framework with App Router, SSR, and file-based routing |
+| `react` | UI library |
+| `react-dom` | React DOM rendering |
+
+### Authentication
+| Package | Purpose |
+|---|---|
+| `better-auth` | Full-stack authentication (email/password + social OAuth) |
+
+### UI Components
+| Package | Purpose |
+|---|---|
+| `@heroui/react` | Component library — Card, Button, Avatar, Form, Input, Separator, Chip, SearchField |
+| `@iconify/react` | Icon library with access to 200,000+ icons |
+| `react-icons` | Additional icon sets (React Icons, Google, social icons) |
+| `@gravity-ui/icons` | Gravity UI icon set |
+
+### Styling & Animation
+| Package | Purpose |
+|---|---|
+| `tailwindcss` | Utility-first CSS framework |
+| `animate.css` | CSS animation library for banner and search field effects |
+
+### Database
+| Package | Purpose |
+|---|---|
+| `mongoose` / MongoDB | Database for storing user accounts via Better Auth adapter |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── (others)/
+│   │   ├── all-tiles/
+│   │   │   ├── page.jsx          # All tiles with search
+│   │   │   └── [id]/page.jsx     # Tile details page
+│   │   ├── login/page.jsx        # Login page
+│   │   ├── register/page.jsx     # Register page
+│   │   ├── my-profile/page.jsx   # User profile page
+│   │   └── layout.jsx            # Shared layout with Navbar & Footer
+│   ├── api/auth/[...all]/
+│   │   └── route.js              # Better Auth API handler
+│   └── page.jsx                  # Home page
+├── components/
+│   └── shared/
+│       ├── Navbar.jsx            # Responsive navbar with auth state
+│       ├── Footer.jsx            # Footer with social links
+│       ├── Banner.jsx            # Hero banner with CTA
+│       ├── FeaturedTiles.jsx     # Featured tiles section
+│       ├── FeaturedTilesCard.jsx # Individual tile card
+│       ├── NavLink.jsx           # Active-aware navigation link
+│       └── UpdateUserModal.jsx   # Profile update modal
+└── lib/
+    ├── auth.ts                   # Better Auth server config
+    └── auth-client.ts            # Better Auth client config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/a8-tiles-website.git
+cd a8-tiles-website
+```
 
-## Learn More
+### 2. Install dependencies
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Set up environment variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create a `.env` file in the root:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+BETTER_AUTH_SECRET=your_secret_here
+BETTER_AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+MONGODB_URI=your_mongodb_connection_string
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
 
-## Deploy on Vercel
+### 4. Run the development server
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
