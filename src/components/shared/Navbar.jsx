@@ -17,14 +17,16 @@ const Navbar = () => {
     <div className="bg-[#F9F6F2]">
       <nav className=" flex justify-between items-center  py-3 container mx-auto w-full">
         <div className="flex items-center">
-          <Image
+          <Link href={"/"}>
+            <Image
             src={"/logo.webp"}
-            alt="logo"
+            alt="Tiles Shop Logo"
             loading="eager"
             width={40}
             height={40}
-            className="object-cover h-auto w-auto"
+            className="object-cover h-auto w-auto cursor-pointer"
           />
+          </Link>
         </div>
 
         <ul className="flex justify-center items-center gap-5 text-base text-gray-500">
@@ -58,7 +60,7 @@ const Navbar = () => {
             </Avatar>
 
             <Button onClick={handleSignOut} size="md" variant="danger">
-              SignOut
+              Logout
             </Button>
           </div>
         )}

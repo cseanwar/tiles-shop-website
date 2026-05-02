@@ -2,12 +2,10 @@ import { Button, Card, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BiDownload } from "react-icons/bi";
-import { FaHeart } from "react-icons/fa6";
 
 const FeaturedTilesCard = ({ tile }) => {
   return (
-    <Card className="border rounded-xl space-y-2">
+    <Card className="border bg-[#f7f6f4] rounded-xl space-y-2 cursor-pointer">
       <div className="relative w-full aspect-square">
         <Image
           src={tile.image}
@@ -17,7 +15,7 @@ const FeaturedTilesCard = ({ tile }) => {
           className="object-cover rounded-xl"
         />
 
-        <Chip size="sm" className="absolute right-2 top-2">
+        <Chip size="md" className="absolute right-25 -top-3 bg-blue-300">
           {tile.category}
         </Chip>
       </div>

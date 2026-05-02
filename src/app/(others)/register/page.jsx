@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
 import {
   Button,
   Card,
@@ -112,19 +111,8 @@ const RegisterPage = () => {
           type="submit"
           className="w-full bg-success font-semibold text-lg py-5 mt-3"
         >
-          {/* <Check /> */}
           Register
         </Button>
-
-        {/* <div className="flex gap-2 mt-5">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="danger">
-            Reset
-          </Button>
-        </div> */}
       </Form>
 
       <p className="text-center mt-10">

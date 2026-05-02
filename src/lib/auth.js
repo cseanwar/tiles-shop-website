@@ -12,6 +12,12 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true
   },
+
+    trustedOrigins: [
+    "http://localhost:3000",
+    "https://tiles-shop-website.vercel.app",
+  ],
+  
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID,

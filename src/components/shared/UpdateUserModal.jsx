@@ -44,7 +44,7 @@ const UpdateUserModal = () => {
                   </TextField>
 
                   <Modal.Footer>
-                    <Button slot="close" variant="secondary">
+                    <Button slot="close" variant="danger">
                       Cancel
                     </Button>
                     <Button type="submit" slot="close">

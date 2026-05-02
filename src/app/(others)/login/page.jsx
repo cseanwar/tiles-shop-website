@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
 import {
   Button,
   Card,
@@ -13,8 +12,8 @@ import {
   Separator,
   TextField,
 } from "@heroui/react";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -89,10 +88,13 @@ const LoginPage = () => {
           <FieldError />
         </TextField>
 
-        <Button type="submit" className="w-full bg-success font-semibold text-lg py-5 mt-3">
-            {/* <Check /> */}
-            Login
-          </Button>
+        <Button
+          type="submit"
+          className="w-full bg-success font-semibold text-lg py-5 mt-3"
+        >
+          {/* <Check /> */}
+          Login
+        </Button>
 
         {/* <div className="flex gap-2 items-center justify-center mt-5">
           
@@ -101,26 +103,36 @@ const LoginPage = () => {
 
         <div className="flex items-center gap-3 w-42 mt-5">
           <Separator className="bg-olive-500 h-0.5" />
-          <span className="whitespace-nowrap text-lg text-olive-500 font-bold">OR</span>
+          <span className="whitespace-nowrap text-lg text-olive-500 font-bold">
+            OR
+          </span>
           <Separator className="bg-olive-500 h-0.5" />
         </div>
 
-        <Button
+        <Button onClick={handlGoogleSignIn} className="w-full text-base font-semibold py-5 flex items-center justify-center gap-3" variant="tertiary">
+          <Icon icon="devicon:google" />
+          Sign in with Google
+        </Button>
+
+        {/* <Button
           onClick={handlGoogleSignIn}
           variant="tertiary"
           className="w-full text-base font-semibold py-5 border-blue-500 flex items-center justify-center gap-2"
         >
           <FcGoogle /> 
           Sign In With Google
-        </Button>
+        </Button> */}
       </Form>
 
       <p className="text-center mt-10">
-          Don't Have An Account?{" "}
-          <Link href={"/register"} className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl">
-            Register
-          </Link>
-        </p>
+        Don't Have An Account?{" "}
+        <Link
+          href={"/register"}
+          className="bg-linear-to-r from-[#FF8C47] to-[#F75B5F] bg-clip-text text-transparent font-bold text-xl"
+        >
+          Register
+        </Link>
+      </p>
 
       {/* <span>OR<Separator /></span>   */}
       {/* <p className="text-center"> Or</p> */}

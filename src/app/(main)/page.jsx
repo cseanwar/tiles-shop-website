@@ -1,8 +1,8 @@
-import FeaturedTiles from "@/components/FeaturedTiles";
+import FeaturedTiles from "@/components/shared/FeaturedTiles";
 
 export default function Home() {
   return (
-    <div className="bg-[#E7E5E4]">
+    <div className="bg-[#F9F6F2]">
       <div className="container mx-auto">
         <FeaturedTiles />
       </div>

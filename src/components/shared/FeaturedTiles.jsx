@@ -1,5 +1,6 @@
 import FeaturedTilesCard from "./FeaturedTilesCard";
 
+
 const FeaturedTiles = async () => {
   const res = await fetch("https://tiles-shop-website.vercel.app/data.json");
   const tiles = await res.json();
