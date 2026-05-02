@@ -3,6 +3,7 @@
 import FeaturedTilesCard from "@/components/shared/FeaturedTilesCard";
 import { SearchField } from "@heroui/react";
 import { useEffect, useState } from "react";
+import 'animate.css';
 
 const AllTiles = () => {
   const [tiles, setTiles] = useState([]);
@@ -24,7 +25,7 @@ const AllTiles = () => {
         <div className="flex justify-between items-center mb-5">
           <h1 className="text-2xl font-bold mb-4">All Photos</h1>
 
-          <div className="w-[500px]">
+          <div className="w-[500px] animate__animated animate__zoomInDown">
             <SearchField
               className="gap-2"
               value={searchQuery}

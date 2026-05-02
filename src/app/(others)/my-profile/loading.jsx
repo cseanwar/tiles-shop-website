@@ -1,7 +1,7 @@
 import React from "react";
 import { RingLoader } from "react-spinners";
 
-const LoadingPage = () => {
+const loading = () => {
   return (
     <div className="h-[85vh] items-center justify-center">
       <RingLoader color="#105a3a" />
@@ -9,4 +9,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default loading;

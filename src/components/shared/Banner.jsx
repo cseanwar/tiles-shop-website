@@ -10,6 +10,7 @@
 
 // import "swiper/swiper-bundle.css";
 import Link from "next/link";
+import 'animate.css';
 
 const Banner = () => {
   return (
@@ -22,7 +23,7 @@ const Banner = () => {
           precision-engineered tiles.
         </p>
         <Link href="/all-tiles">
-          <button className="bg-[#333736] hover:bg-[#555555] py-3 px-7 cursor-pointer">Browse Now</button>
+          <button className="bg-[#333736] hover:bg-[#555555] py-3 px-7 cursor-pointer animate__animated animate__shakeY">Browse Now</button>
         </Link>
       </div>
 

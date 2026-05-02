@@ -52,8 +52,8 @@ const Navbar = () => {
           <div className="flex justify-center items-center gap-3">
             <Avatar size="lg">
               <Avatar.Image
-                alt="John Doe"
-                src={user?.image}
+                alt={user?.name}
+                src={user?.image || undefined}
                 referrerPolicy="no-referrer"
               />
               <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
@@ -64,34 +64,6 @@ const Navbar = () => {
             </Button>
           </div>
         )}
-
-        {/* <div className="flex gap-4">
-          {!user && (
-            <ul className="flex items-center  text-sm gap-5">
-              <li>
-                <Link href={"/signup"}>SignUp</Link>
-              </li>
-              <li>
-                <Link href={"/signin"}>SignIn</Link>
-              </li>
-            </ul>
-          )}
-
-          {user && (
-            <div className="flex gap-3">
-              <Avatar size="sm">
-                <Avatar.Image
-                  alt="John Doe"
-                  src={user?.image}
-                  referrerPolicy="no-referrer"
-                />
-                <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-              </Avatar>
-
-              <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
-            </div>
-          )}
-        </div> */}
       </nav>
     </div>
   );

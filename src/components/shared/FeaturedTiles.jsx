@@ -1,4 +1,5 @@
 import FeaturedTilesCard from "./FeaturedTilesCard";
+import 'animate.css';
 
 
 const FeaturedTiles = async () => {
@@ -10,7 +11,7 @@ const FeaturedTiles = async () => {
     <div className="mb-10">
       <h1 className="text-2xl font-bold my-5">Featured Tiles</h1>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-5 animate__animated animate__backInLeft">
         {featuredTiles.map((tile) => (
           <FeaturedTilesCard key={tile.id} tile={tile} />
         ))}
