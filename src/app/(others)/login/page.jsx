@@ -27,6 +27,7 @@ const LoginPage = () => {
       password,
       callbackURL: "/",
     });
+    console.log({ data, error });
   };
 
   const handlGoogleSignIn = async () => {

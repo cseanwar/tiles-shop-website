@@ -10,11 +10,11 @@ const TilesDetailsPage = async ({ params }) => {
   return (
     <div className="bg-[#C3C7C630] px-4 sm:px-6 py-8">
       <div className="container mx-auto">
+        <h1 className="text-center font-bold text-2xl sm:text-3xl md:text-4xl mb-6">
+          {tile?.title} Details
+        </h1>
         <div className="flex flex-col md:flex-row gap-6 lg:gap-10 justify-center items-start mb-16">
-          <div className="flex flex-col gap-2 w-full md:w-[400px] lg:w-[500px] shrink-0">
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-3">
-              {tile?.title}
-            </h1>
+          <div className="w-full md:w-[400px] lg:w-[500px] shrink-0">
             <div className="w-full h-[250px] sm:h-[300px] md:h-[350px]">
               <Image
                 src={tile.image}
@@ -25,7 +25,7 @@ const TilesDetailsPage = async ({ params }) => {
               />
             </div>
           </div>
-          <div className="w-full md:flex-1 pt-16">
+          <div className="w-full md:flex-1">
             <table className="table-auto border-collapse w-full text-left text-sm sm:text-base">
               <tbody>
                 <tr className="border-b">

@@ -1,6 +1,3 @@
-// import dns from "node:dns";
-// dns.setServers(["8.8.8.8", "8.8.4.4"]);
-
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -16,8 +13,8 @@ export const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Dragon News",
-  description: "Best news portal in Bangladesh",
+  title: "TilesMax - Your Ultimate Tile Destination",
+  description: "Best tiles portal in Bangladesh",
 };
 
 export default function RootLayout({ children }) {

@@ -20,7 +20,6 @@ const Navbar = () => {
   return (
     <div className="bg-[#F9F6F2] shadow-sm">
       <nav className="flex justify-between items-center py-3 container mx-auto w-full px-4">
-        
         <div className="flex items-center">
           <Link href={"/"}>
             <Image
@@ -35,15 +34,23 @@ const Navbar = () => {
         </div>
 
         <ul className="hidden md:flex justify-center items-center gap-5 text-base text-gray-500">
-          <li><NavLink href={"/"}>Home</NavLink></li>
-          <li><NavLink href={"/all-tiles"}>All Tiles</NavLink></li>
-          <li><NavLink href={"/my-profile"}>My Profile</NavLink></li>
+          <li>
+            <NavLink href={"/"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink href={"/all-tiles"}>All Tiles</NavLink>
+          </li>
+          <li>
+            <NavLink href={"/my-profile"}>My Profile</NavLink>
+          </li>
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
           {!user && (
             <Link href={"/login"}>
-              <Button size="md" variant="primary">Login</Button>
+              <Button size="md" variant="primary">
+                Login
+              </Button>
             </Link>
           )}
           {user && (
@@ -75,7 +82,6 @@ const Navbar = () => {
 
       {menuOpen && (
         <div className="md:hidden bg-[#F9F6F2] border-t px-4 py-4 flex flex-col gap-4">
-          
           <ul className="flex flex-col gap-3 text-base text-gray-500">
             <li onClick={() => setMenuOpen(false)}>
               <NavLink href={"/"}>Home</NavLink>
@@ -96,19 +102,29 @@ const Navbar = () => {
             </Link>
           )}
           {user && (
-            <div className="flex items-center gap-3">
-              <Avatar size="md">
-                {user?.image && (
-                  <Avatar.Image
-                    alt={user?.name}
-                    src={user.image}
-                    referrerPolicy="no-referrer"
-                  />
-                )}
-                <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
-              </Avatar>
-              <span className="text-sm font-semibold text-gray-700">{user?.name}</span>
-              <Button onClick={handleSignOut} size="sm" variant="danger" className="ml-auto">
+            <div className="flex items-center gap-2">
+              <p className="text-sm font-semibold">Hello, {user?.name}</p>
+              <Link href={"/my-profile"}>
+                <Avatar size="md">
+                  {user?.image && (
+                    <Avatar.Image
+                      alt={user?.name}
+                      src={user.image}
+                      referrerPolicy="no-referrer"
+                    />
+                  )}
+                  <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
+                </Avatar>
+              </Link>
+              <span className="text-sm font-semibold text-gray-700">
+                {user?.name}
+              </span>
+              <Button
+                onClick={handleSignOut}
+                size="sm"
+                variant="danger"
+                className="ml-auto"
+              >
                 Logout
               </Button>
             </div>
