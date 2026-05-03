@@ -92,7 +92,7 @@ const LoginPage = () => {
         >
           <Label className="text-base sm:text-lg font-semibold">Password</Label>
           <Input placeholder="Enter your password" className="w-full"/>
-          <Description className="text-red-500 text-xs sm:text-sm">
+          <Description className="text-red-500 text-xs">
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
           <FieldError />
