@@ -55,6 +55,7 @@ const Navbar = () => {
           )}
           {user && (
             <div className="flex justify-center items-center gap-3">
+              <p className="text-sm font-semibold">Hello, {user?.name}</p>
               <Avatar size="lg">
                 {user?.image && (
                   <Avatar.Image
@@ -116,9 +117,6 @@ const Navbar = () => {
                   <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
                 </Avatar>
               </Link>
-              <span className="text-sm font-semibold text-gray-700">
-                {user?.name}
-              </span>
               <Button
                 onClick={handleSignOut}
                 size="sm"
