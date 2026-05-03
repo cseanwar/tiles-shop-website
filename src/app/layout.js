@@ -1,4 +1,5 @@
 import { Montserrat, Poppins } from "next/font/google";
+import { ToastProvider } from "@heroui/react";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" className={`h-full antialiased`}>
       <body className={`${poppins.className} min-h-full flex flex-col`}>
+        <ToastProvider placement="top-right" />
         {children}
       </body>
     </html>

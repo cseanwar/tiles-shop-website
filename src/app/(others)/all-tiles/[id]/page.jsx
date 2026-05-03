@@ -1,11 +1,22 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 const TilesDetailsPage = async ({ params }) => {
   const { id } = await params;
+
   const res = await fetch("https://json-server-noux.onrender.com/tiles");
+  
+  if (!res.ok) {
+    throw new Error("Failed to fetch tiles");
+  }
+
   const tiles = await res.json();
 
-  const tile = tiles.find((t) => t.id == id);
+  const tile = tiles.find((t) => String(t.id) === String(id));
+
+  if (!tile) {
+    notFound();
+  }
 
   return (
     <div className="bg-[#C3C7C630] px-4 sm:px-6 py-8">

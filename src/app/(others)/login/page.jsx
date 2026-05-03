@@ -14,6 +14,7 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { toast } from "@heroui/react";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -28,6 +29,13 @@ const LoginPage = () => {
       callbackURL: "/",
     });
     console.log({ data, error });
+
+    if (error) {
+      toast.danger("Login Failed");
+      return;
+    }
+
+    toast.success("Login Successful!");
   };
 
   const handlGoogleSignIn = async () => {
