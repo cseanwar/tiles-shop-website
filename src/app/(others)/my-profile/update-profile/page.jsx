@@ -35,10 +35,6 @@ const UpdateProfile = () => {
     router.push("/my-profile");
   };
 
-  const handleCancel = () => {
-    router.push("/my-profile");
-  };
-
   return (
     <div className="bg-[#C3C7C630] flex items-center justify-center px-4 py-10">
       <Card className="border w-full max-w-sm sm:max-w-md py-8 sm:py-10 px-4 sm:px-6">
@@ -56,7 +52,9 @@ const UpdateProfile = () => {
             className="w-full"
             defaultValue={user?.name}
           >
-            <Label className="font-semibold text-sm sm:text-base md:text-lg">Name</Label>
+            <Label className="font-semibold text-sm sm:text-base md:text-lg">
+              Name
+            </Label>
             <Input placeholder="Enter your full name" className="w-full" />
             <FieldError />
           </TextField>
@@ -74,19 +72,12 @@ const UpdateProfile = () => {
             <FieldError />
           </TextField>
 
-          <div className="flex flex-col sm:flex-row gap-3 mt-2">
-            <Button
-              type="button"
-              variant="danger"
-              className="flex-1 py-2 sm:py-3"
-              onClick={handleCancel}
-            >
-              Cancel
-            </Button>
-            <Button type="submit" className="flex-1 bg-success font-semibold py-2 sm:py-3">
-              Save
-            </Button>
-          </div>
+          <Button
+            type="submit"
+            className="flex-1 bg-success font-semibold text-base py-2 sm:py-3 mt-4 w-full"
+          >
+            Update Information
+          </Button>
         </Form>
       </Card>
     </div>
