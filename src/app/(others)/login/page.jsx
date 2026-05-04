@@ -31,11 +31,11 @@ const LoginPage = () => {
     console.log({ data, error });
 
     if (error) {
-      toast.danger("Login Failed");
+      toast.danger("Login Failed: " + error.message);
       return;
     }
 
-    toast.success("Login Successful!");
+    toast.success("Login Successful!" + (data?.user?.name ? ` Welcome back, ${data.user.name}!` : ""));
   };
 
   const handlGoogleSignIn = async () => {

@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "@heroui/react";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -33,12 +34,14 @@ const RegisterPage = () => {
     });
 
     if (error) {
-      alert(error.message);
+      toast.danger("Registration failed: " + error.message);
+      return;
     }
 
     if (res) {
-      alert("Signup successful");
-      router.push("/");
+      await authClient.signOut();
+      toast.success("Account created successfully!");
+      router.push("/login");
     }
   };
 

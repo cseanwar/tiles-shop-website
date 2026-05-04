@@ -8,7 +8,48 @@ import 'animate.css';
 const AllTiles = () => {
   const [tiles, setTiles] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   fetch("https://json-server-noux.onrender.com/tiles")
+  //     .then((res) => {
+  //       if (!res.ok) throw new Error("Server is waking up, please wait...");
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setTiles(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+  // const handleRetry = () => {
+  //   setLoading(true);
+  //   setError(null);
+  // };
+
+  // useEffect(() => {
+  //   if (!loading) return;
+
+  //   fetch("https://json-server-noux.onrender.com/tiles")
+  //     .then((res) => {
+  //       if (!res.ok) throw new Error("Server is waking up, please wait...");
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setTiles(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       setError(err.message);
+  //       setLoading(false);
+  //     });
+  // }, [loading]);
+  
   useEffect(() => {
     fetch("https://json-server-noux.onrender.com/tiles")
       .then((res) => res.json())
