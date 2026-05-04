@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import errorImage from "@/assets/error-404.png";
+import errorImage from "@/assets/404-not-found.png";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 const NotFound = () => {
